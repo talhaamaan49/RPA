@@ -7,7 +7,10 @@ from selenium.webdriver.common.by import By
 sl.set_page_config(page_title="Amaan", layout='centered')
 sl.title("Robotic Process Automation")
 
-def rpa():
+user_input1 = sl.text_input('Enter the product')
+btn = sl.button('Submit')
+
+if btn:
     # create a driver object using driver_path as a parameter
     driver_path = "C:\\Users\\talha\\.wdm\\drivers\\chromedriver\\win64\\117.0.5938.134\\chromedriver-win32\\chromedriver.exe"
     service = Service(executable_path=driver_path)
@@ -31,10 +34,3 @@ def rpa():
 
     search_amazon = driver.find_element(By.CLASS_NAME, 's-image')
     search_amazon.click()
-
-
-user_input1 = sl.text_input('Enter the product')
-btn = sl.button('Submit')
-
-if btn:
-    rpa()
